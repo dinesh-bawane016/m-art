@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import API from '../utils/api';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -128,17 +128,26 @@ const ArtCard = ({ artwork }) => {
 };
 
 const Gallery = () => {
+  const [searchParams] = useSearchParams();
   const [artworks, setArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [category, setCategory] = useState('All');
-  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState(searchParams.get('category') || 'All');
+  const [search, setSearch] = useState(searchParams.get('search') || '');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sort, setSort] = useState('newest');
 
+  // Sync state with URL params
+  useEffect(() => {
+    const s = searchParams.get('search');
+    const c = searchParams.get('category');
+    if (s !== null) setSearch(s);
+    if (c !== null) setCategory(c);
+  }, [searchParams]);
+
   useEffect(() => {
     fetchArtworks();
-  }, [category, minPrice, maxPrice, sort]);
+  }, [category, search, minPrice, maxPrice, sort]);
 
   const fetchArtworks = async () => {
     setLoading(true);

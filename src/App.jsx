@@ -16,6 +16,7 @@ import Checkout from './pages/Checkout';
 import ArtistDashboard from './pages/ArtistDashboard';
 import ArtistProfile from './pages/ArtistProfile';
 import AdminLayout from './pages/AdminLayout';
+import AdminLogin from './pages/AdminLogin';
 import Profile from './pages/Profile';
 import { useAuth } from './context/AuthContext';
 
@@ -49,6 +50,7 @@ function App() {
         <Route path="/artist/:id" element={<ArtistProfile />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/wishlist" element={
