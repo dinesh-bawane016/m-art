@@ -3,10 +3,16 @@
  * Copies all data from local MongoDB → Atlas
  * Run with: node migrate.js
  */
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-const LOCAL_URI = 'mongodb://localhost:27017/m-art';
-const ATLAS_URI = 'mongodb+srv://dineshUser:9WEir7sOWw8a9SzO@cluster0.r3kgsel.mongodb.net/m-art?appName=Cluster0';
+const LOCAL_URI = process.env.LOCAL_MONGO_URI || 'mongodb://localhost:27017/m-art';
+const ATLAS_URI = process.env.MONGO_URI || process.env.ATLAS_URI;
+
+if (!ATLAS_URI) {
+  console.error('❌ MONGO_URI environment variable is missing.');
+  process.exit(1);
+}
 
 const COLLECTIONS = ['users', 'artworks', 'orders', 'reviews', 'admins'];
 
