@@ -38,13 +38,13 @@ const Home = () => {
           {/* Right Content: Art Cluster */}
           <div className="relative h-[500px] lg:h-[600px] hero-grid animate-fade-in">
             <div className="hero-img-1 overflow-hidden shadow-2xl">
-              <img src="/images/hero-1.png" alt="Featured Art 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/hero-1.webp" alt="Featured Art 1" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="hero-img-2 overflow-hidden shadow-xl">
-              <img src="/images/hero-2.png" alt="Featured Art 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/hero-2.webp" alt="Featured Art 2" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="hero-img-3 overflow-hidden shadow-lg">
-              <img src="/images/hero-3.png" alt="Featured Art 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img src="/images/hero-3.webp" alt="Featured Art 3" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </div>
@@ -147,22 +147,22 @@ const Home = () => {
               {
                 title: 'TRANSFORM YOUR SPACE',
                 desc: 'Original art creates an atmosphere in a way nothing else can. A single piece can define an entire room.',
-                image: '/images/why-transform.png'
+                image: '/images/why-transform.webp'
               },
               {
                 title: 'SMART INVESTMENT',
                 desc: 'Support an emerging artist before they\'re discovered. Art appreciates in value over time.',
-                image: '/images/why-investment.png'
+                image: '/images/why-investment.webp'
               },
               {
                 title: 'CONNECT WITH AN ARTIST',
                 desc: 'Every piece is created by hand. When you buy original, you own a part of the artist\'s vision and craft.',
-                image: '/images/why-connect.png'
+                image: '/images/why-connect.webp'
               },
               {
                 title: 'START A CONVERSATION',
                 desc: 'Original art draws people in and sparks connection. It tells a story that resonates with everyone who sees it.',
-                image: '/images/why-conversation.png'
+                image: '/images/why-conversation.webp'
               }
             ].map((item, i) => (
               <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center group">
